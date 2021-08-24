@@ -17,7 +17,7 @@ _Tips! npm-paketet colors låter dig använda färger med console.log._
 
 Kontrollera att du har gjort rätt genom att skriva i terminalen: node -v
 
-1b Följ instruktionerna i [TypeScript](typescript.md) för att skapa ett projekt med stöd för TypeScript. Använd `tsc` för att kompilera din script.ts innan du kör den. Försök att använda datatyper på alla variabler och funktioner.
+1b Följ instruktionerna i [TypeScript](typescript.md) för att skapa ett projekt med stöd för TypeScript. (Övningarna 1a och 1b, men inte längre.) Använd `tsc` för att kompilera din script.ts innan du kör den. Försök att använda datatyper på alla variabler och funktioner.
 
 2a Skapa en fil med namnet script.ts och följande innehåll:
 
@@ -30,7 +30,7 @@ Kör den genom att skriva: `node script.js`
 
 2b Ändra skriptet så att du använder features från vanlig "vanilla" JavaScript. Prova variabler, funktioner, arrayer och objekt.
 
-2c Nu ska du prova moduler. Lägg en funktion i en annan fil. Använd _require_ för att importera funktionen.
+2c Nu ska du prova moduler. Lägg en funktion i en annan fil. Använd _import_ för att importera funktionen. (_import_ om du använder TypeScript, _require_ annars)
 
 _(Uppgift 3-5 utgår från npm, hoppa över dem om du inte är bekväm med npm än)_
 
