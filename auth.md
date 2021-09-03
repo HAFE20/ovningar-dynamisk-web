@@ -16,3 +16,18 @@ Varning! Många artiklar på nätet har föråldrad information och hänvisar ti
 4b Gör så att din logger inte skriver ut request till statiska mappen, genom att byta ordning på raderna.
 
 5 Ta reda på vad CORS är och när man behöver installera den som middleware.
+
+---
+6a Nu ska vi börja med autentisering. Installera tre middleware: express-session, passport och cookie-parser. Skapa en ny endpoint `POST /login` som tar emot en FORM body: `{ "user": "guest", "password": "guest" }`. Om användarnamn eller lösenord är felaktigt ska du visa ett felmeddelande och en relevant HTTP statuskod. Använd Insomnia för att testa dina endpoints.
+
+6b Ändra koden så att Passport används för att hantera inloggning med en LocalStrategy. Din strategi-funktion ska kontrollera att user==guest och password==guest. Om något är fel, ska användaren omdirigeras till /login-fail med `res.redirect('/login-fail')`. (Glöm inte skapa endpointen logn-fail.)
+
+7 Gör en endpoint `/protected` som skickar tillbaka olika meddelanden beroende på om man är inloggad eller inte, när man besöker den.
+
+8 Gör en endpoint `/logout` som loggar ut användaren.
+
+9 Skapa en fejk-databas med användare == en array med påhittade user-objekt. User: `{ username, password }`. Du ska ha minst två användare. Använd `array.find` i din LocalStrategy för att kontrollera om man loggar in med någon av användarna i arrayen.
+
+10 Lägg till information i dina User-objekt: `permission`, som kan vara "admin" eller "user". Gör två routes: `/protected` som ska vara åtkomlig för inloggade användare och admins, och `/admin` som bara en admin ska komma åt. Använd res.send eller res.sendFile för att skicka tillbaka svar till klienten.
+
+11 Se till att du har en statisk frontend-mapp med en HTML-fil. Bygg ett formulär i frontend som postar till `/login`. Ändra i koden så att det inte är ett meddelande som skickas tillbaka, utan HTML-filer: success.html och fail.html.
